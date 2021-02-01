@@ -5,15 +5,23 @@ services:
         image: neo4j-example-db
         build:
             context: ./db
-        env_file:
-            - ./.env
         networks:
             - network
         ports:
-            - 7473:7473 # HTTPS
+            #- 7473:7473 # HTTPS
             - 7474:7474 # HTTP
             - 7687:7687 # BOLT
-
+        volumes:
+            - ./db/conf:/conf
+            - ./db/data:/data
+            - ./db/import:/import
+            - ./db/logs:/logs
+            - ./db/plugins:/plugins
+        environment: 
+            # Raise memory limits
+            - NEO4J_dbms_memory_pagecache_size=1G
+            - NEO4J_dbms.memory.heap.initial_size=1G
+            - NEO4J_dbms_memory_heap_max__size=1G
 
 networks:
     network:
