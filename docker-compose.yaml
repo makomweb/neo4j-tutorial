@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+    db:
+        container_name: neo4j-example-db
+        image: neo4j-example-db
+        build:
+            context: ./db
+        env_file:
+            - ./.env
+        networks:
+            - network
+        ports:
+            - 7473:7473 # HTTPS
+            - 7474:7474 # HTTP
+            - 7687:7687 # BOLT
+
+
+networks:
+    network:
