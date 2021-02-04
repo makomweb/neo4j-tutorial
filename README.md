@@ -1,10 +1,11 @@
 # Neo4j Tutorial
 
-## Open the Neo4j browser
+## Steps
 
-Open your browser on `http://localhost:7474`
-
-Run `:play start` to open the tutorial page
+1. run `docker composer up -d`
+2. open your browser on `http://localhost:7474/browser`
+3. use the credentials from the `.env` file to login
+4. type `:play start` in the interactive window to open the tutorial page
 
 ## Open a bash on the container
 
