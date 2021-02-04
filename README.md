@@ -1,4 +1,4 @@
-# Neo4j Spring Docker Tutorial
+# Neo4j Tutorial
 
 ## Open the Neo4j browser
 
